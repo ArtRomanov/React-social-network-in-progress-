@@ -1,0 +1,19 @@
+.item h5 {
+  color: white;
+  text-decoration: none;
+}
+
+.item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+}
+
+.item {
+  width: 50px;
+  margin: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

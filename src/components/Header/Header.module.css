@@ -1,0 +1,13 @@
+.header {
+    grid-area: h;
+    background: linear-gradient(to top, #000000, rgb(213, 213, 219));
+  }
+  
+  .header img {
+    width: 20px;
+  }
+  .loginBlock {
+    float: right;
+    font-weight: bold;
+    color: #ff0303
+  }
