@@ -3,12 +3,11 @@ import React from 'react'
 export default class ProfileStatus extends React.Component {
 
     state = {
-        text: 'Hello world',
+        status: this.props.status,
         editMode: false
     }
 
     activateEditeMode = () => {
-        debugger
         this.setState ({
             editMode: true
         })
@@ -17,22 +16,38 @@ export default class ProfileStatus extends React.Component {
         this.setState({
             editMode: false
         })
+        this.props.updateStatus(this.state.status)
+    }
+    onStatusChange = (e) => {
+        this.setState({
+            status: e.target.value
+        })
+    }
+
+    componentDidUpdate = (prevProps, prevState) => {
+        
+        if(prevProps.status  !== this.props.status) {
+            this.setState ({
+                status: this.props.status
+            })
+
+            
+        }
     }
 
     render () {
-
-        return <div>
+        return (<div>
             {!this.state.editMode && 
             <div>
-                <span onDoubleClick = {this.activateEditeMode}>{this.props.profile.aboutMe}</span>
+                <span onDoubleClick = {this.activateEditeMode}>{this.props.status || 'No comments'}</span>
             </div>}
             {this.state.editMode && 
             <div  >
-                <input value = {this.props.profile.aboutMe} 
+                <input  onChange ={(e)=>this.onStatusChange(e)} value = {this.state.status}
                 autoFocus = {true}
                 onBlur = {this.deactivateEditeMode}></input>
             </div>}
             
-        </div>
+        </div>)
     }
 }

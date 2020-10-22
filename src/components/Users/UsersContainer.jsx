@@ -21,9 +21,8 @@ class UsersContainer extends React.Component {
     render() {
         
         return <>
-        <div>{this.props.isFetching ? 
-        <Preloader/> : null}
-        </div>
+        {this.props.isFetching ? <Preloader/> : null}
+        
         
         <Users onPageChange = {this.onPageChange}
                 totalUsersCount = {this.props.totalUsersCount}
@@ -51,10 +50,10 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
+    withAuthRedirect,
     connect(mapStateToProps, 
         {setUsers, setCurrentPage, setUsersTotalCount,
-        getUsersThunkCreator, unfollowThunk, followThunk}),
-    withAuthRedirect
+        getUsersThunkCreator, unfollowThunk, followThunk})
 )(UsersContainer)
 
  
