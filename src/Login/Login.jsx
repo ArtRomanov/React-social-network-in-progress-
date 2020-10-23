@@ -4,11 +4,10 @@ import { Redirect } from 'react-router-dom';
 import {Field, reduxForm} from 'redux-form'
 import { Input } from '../components/common/FormsControl/FormsControls';
 import { login } from '../Redux/authReducer';
-import { maxLength, required } from '../utils/validators/validators';
-
+import { required } from '../utils/validators/validators';
+import s from './../components/common/FormsControl//FormsControls.module.css'
 const LoginForm = (props) => {
-    const maxLength15 = maxLength(15)
-
+debugger
     return (
     <form onSubmit = {props.handleSubmit}>
         <div>
@@ -20,10 +19,13 @@ const LoginForm = (props) => {
         validate={[required]}/>
         </div>
         <div>
-        <Field name = {'rememberMe'} type="checkbox" component={'input'} 
-        validate={[required]}/>remember me
-        
+        <Field name = {'rememberMe'} type="checkbox" component={'input'} />remember me
         </div>
+            {props.error
+            ?   <div className = {s.errorForm}>
+                    {props.error}
+                </div> 
+            : ''}
         <div>
             <button>Login</button>
         </div>

@@ -8,3 +8,10 @@
 .formControl.error span {
     color:  red;
 }
+.errorForm {
+    border: red 1px solid;
+    padding: 5px;
+    color: red;
+
+    display:inline-block;
+}
