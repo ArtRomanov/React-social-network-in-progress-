@@ -9,9 +9,6 @@ import ProfileStatus from './ProfileStatus';
      return <Preloader/>
    }
     return <div>
-              {/* <div>
-                <img alt='beach' src='https://image.shutterstock.com/image-photo/bright-spring-view-cameo-island-260nw-1048185397.jpg'></img>
-              </div> */}
               <div className={s.descriptionBlock}>
                 <img alt = 'userPic' className = {s.commonProfilePhoto} src={props.profile.photos.small !== null ? props.profile.photos.small : photo}/>
                 <ProfileStatus profile = {props.profile} status = {props.status} updateStatus = {props.updateStatus}/>
