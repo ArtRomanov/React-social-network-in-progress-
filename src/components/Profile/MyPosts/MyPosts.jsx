@@ -4,7 +4,7 @@ import MyPostsForm from './MyPostsForm';
 import Post from './Posts/Post';
 
 
- const MyPosts = (props) => {
+ const MyPosts = React.memo((props) => {
   let postsElements = props.posts.map(p => <Post message={p.message} count ={p.likesCount} key = {p.id}/>)  
   
   let addNewPost = (post) => {
@@ -20,5 +20,5 @@ import Post from './Posts/Post';
                 {postsElements}
               </div>
             </div>
-}
+})
 export default MyPosts;

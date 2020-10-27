@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Friends from './Friends/Friends';
 import s from './Navbar.module.css'
@@ -27,7 +28,15 @@ import s from './Navbar.module.css'
             <NavLink to='/settings' activeClassName={s.activeLink}>Settings</NavLink> 
           </div>
       </div>
-      <Friends state={props.state.friendsItem}/>
+      <Friends state={props.friendsItem}/>
   </nav>
 }
-export default Navbar;
+const mapStateToProps = (state) => ({
+
+friendsItem: state.navBarFriendsReducer.navBarFriends.friendsItem
+})
+const mapDispatchToProps = () => {
+  
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar) ;

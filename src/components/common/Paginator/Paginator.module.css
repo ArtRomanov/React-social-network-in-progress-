@@ -1,0 +1,10 @@
+.selectedPage {
+    font-weight: bold;
+}
+.pages {
+    border: 1px solid grey;
+    margin: 1px;
+}
+.selectedPage.pages {
+    border: 1px solid black;
+}

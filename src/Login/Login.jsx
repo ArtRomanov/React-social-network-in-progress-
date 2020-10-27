@@ -7,7 +7,6 @@ import { login } from '../Redux/authReducer';
 import { required } from '../utils/validators/validators';
 import s from './../components/common/FormsControl//FormsControls.module.css'
 const LoginForm = (props) => {
-debugger
     return (
     <form onSubmit = {props.handleSubmit}>
         <div>
