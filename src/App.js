@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom';
+import {  HashRouter, Route, withRouter } from 'react-router-dom';
 import './App.css';
 import Music from './components/Music/Music';
 import Navbar from './components/Navbar/Navbar';
@@ -61,11 +61,11 @@ let AppMain = compose(
 ;
 
 const App = (props) => {
-  return <BrowserRouter>
+  return <HashRouter>
     <Provider store = {store}>
       
             <AppMain/>
     </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 export default App

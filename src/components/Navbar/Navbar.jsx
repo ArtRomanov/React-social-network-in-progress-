@@ -35,8 +35,5 @@ const mapStateToProps = (state) => ({
 
 friendsItem: state.navBarFriendsReducer.navBarFriends.friendsItem
 })
-const mapDispatchToProps = () => {
-  
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar) ;
+export default connect(mapStateToProps)(Navbar) ;

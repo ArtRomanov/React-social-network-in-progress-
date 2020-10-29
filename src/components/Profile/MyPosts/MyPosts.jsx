@@ -12,7 +12,7 @@ import Post from './Posts/Post';
   }
 
   return    <div className={s.postsBlock}>
-              <h3>{props.hey}</h3>
+              <h3>{props.header}</h3>
                 <div>
                   <MyPostsForm addNewPost  = {addNewPost}/>
                 </div>

@@ -19,12 +19,12 @@ export const Paginator = ({onPageChange, currentPage, pageSize, totalItemsCount,
             {currentPortion>1 ? <button onClick ={()=>setCurrentPortion (currentPortion-1)}>назад</button> : ''}
             {pages.filter( p => p >=lastPageOnLeftSide && p<=lastPageOnRightSide)
             .map( (p) => 
-            { return <>
+            { return <div key = {p} className = {styles.block}>
                 
-            <span onClick={()=>{onPageChange(p)}} 
+            <span  onClick={()=>{onPageChange(p)}} 
                             className={cn({[styles.selectedPage]: currentPage === p}, styles.pages)}>{p}</span>
                
-            </> 
+            </div> 
             })
             
             }

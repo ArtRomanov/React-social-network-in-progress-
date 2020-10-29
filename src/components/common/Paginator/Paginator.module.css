@@ -8,3 +8,6 @@
 .selectedPage.pages {
     border: 1px solid black;
 }
+.block {
+    display: inline-block
+}
